@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import logo from "../../assets/logo.png"
 
 const Root = () => {
@@ -10,14 +10,14 @@ const Root = () => {
             <div className="shadow-md fixed w-full">
                 <div className="navbar bg-base-100">
                     <div className="flex-1">
-                        <img className="w-[7%]" src={logo} alt="" />
-                        <a className="text-2xl font-bold">Tech<span className="text-[#F6AA19]">Trove</span></a>
+                        <img className="w-[7%] hidden md:flex" src={logo} alt="" />
+                        <a className="text-xl md:text-2xl font-bold">Tech<span className="text-[#F6AA19]">Trove</span></a>
                     </div>
                     <div className="flex-none gap-2">
                         <div className="">
-                            <NavLink className={"mr-5"} to={"/"}>Home</NavLink>
-                            <NavLink className={"mr-5"} to={"/add-product"}>Add Product</NavLink>
-                            <NavLink className={"mr-3"} to={"/my-cart"}>My Cart</NavLink>
+                            <NavLink className={"mr-2 ml-2 md:ml-0 md:mr-5"} to={"/"}>Home</NavLink>
+                            <NavLink className={"mr-2 md:mr-5"} to={"/add-product"}>Add Product</NavLink>
+                            <NavLink className={"mr-2 md:mr-3"} to={"/my-cart"}>My Cart</NavLink>
                         </div>
                         {user ? <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -35,11 +35,14 @@ const Root = () => {
                                 <li><a>Settings</a></li>
                                 <li><a>Logout</a></li>
                             </ul>
-                        </div>:   <NavLink className={"mr-3"} to={"/login"}>Login</NavLink>}
+                        </div> : <NavLink className={"mr-3"} to={"/login"}>Login</NavLink>}
                     </div>
                 </div>
             </div>
             {/* Navbar end */}
+            <div className="">
+                <Outlet />
+            </div>
         </div>
     );
 };

@@ -3,10 +3,14 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Root from "./components/pages/Root";
+import Home from "./components/pages/Home";
 
 const router = createBrowserRouter([
   {
     path: "/", element: <Root />,
+    children:[
+      {path: "/", element: <Home/>}
+    ]
   },
 ]);
 
