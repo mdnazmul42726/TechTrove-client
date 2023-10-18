@@ -7,6 +7,8 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Register from "./components/Register";
 import AddProduct from "./components/pages/AddProduct";
+import AuthProvider from "./providers/AuthProvider";
+import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,13 +21,11 @@ const router = createBrowserRouter([
 
       { path: "/register", element: <Register /> },
 
-      { path: "/add-product", element: <AddProduct /> }
+      { path: "/add-product", element: <PrivateRoute><AddProduct /></PrivateRoute> }
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <React.StrictMode><AuthProvider><RouterProvider router={router} /></AuthProvider></React.StrictMode>
 );
