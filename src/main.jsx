@@ -9,19 +9,22 @@ import Register from "./components/Register";
 import AddProduct from "./components/pages/AddProduct";
 import AuthProvider from "./providers/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
+import Company from "./components/Company";
 
 const router = createBrowserRouter([
   {
     path: "/", element: <Root />,
 
     children: [
-      { path: "/", element: <Home />, loader: () => fetch('http://localhost:5000/company') },
+      { path: "/", element: <Home />, loader: () => fetch('http://localhost:5000/brands') },
 
       { path: "/login", element: <Login /> },
 
       { path: "/register", element: <Register /> },
 
-      { path: "/add-product", element: <PrivateRoute><AddProduct /></PrivateRoute> }
+      { path: "/add-product", element: <PrivateRoute><AddProduct /></PrivateRoute> },
+
+      { path: "/company/:id", element: <Company />, loader: ({params})=> fetch(`http://localhost:5000/company/${params.id}`)}
     ]
   },
 ]);
