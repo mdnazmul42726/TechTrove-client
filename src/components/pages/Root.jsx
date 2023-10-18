@@ -40,9 +40,7 @@ const Root = () => {
                 </div>
             </div>
             {/* Navbar end */}
-            <div className="">
-                <Outlet />
-            </div>
+            <div className=""><Outlet /></div>
         </div>
     );
 };
