@@ -5,15 +5,18 @@ import "./index.css";
 import Root from "./components/pages/Root";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
+import Register from "./components/Register";
 
 const router = createBrowserRouter([
   {
     path: "/", element: <Root />,
-    
-    children: [
-      { path: "/", element: <Home />, loader: ()=> fetch('http://localhost:5000/company') },
 
-      { path: "/login", element: <Login /> }
+    children: [
+      { path: "/", element: <Home />, loader: () => fetch('http://localhost:5000/company') },
+
+      { path: "/login", element: <Login /> },
+
+      { path: "/register", element: <Register /> }
     ]
   },
 ]);
