@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
+import Footer from "./Footer";
 
 const Update = () => {
     const previousData = useLoaderData();
@@ -100,6 +101,7 @@ const Update = () => {
                 <button type="submit"
                     className="mt-8 px-8 py-2.5 rounded text-sm font-semibold bg-[#007bff] text-white hover:bg-[#006bff]">Update</button>
             </form>
+            <Footer/>
         </div>
     );
 };

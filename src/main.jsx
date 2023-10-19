@@ -13,6 +13,8 @@ import Company from "./components/Company";
 import ProductDtls from "./components/pages/ProductDtls";
 import MyCart from "./components/pages/MyCart";
 import Update from "./components/Update";
+import About from "./components/pages/About";
+import Contact from "./components/pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
 
       { path: "/register", element: <Register /> },
 
+      { path: "/about", element: <About /> },
+
+      { path: "/contact", element: <Contact /> },
+
       { path: "/add-product", element: <PrivateRoute><AddProduct /></PrivateRoute> },
 
       { path: "/company/:id", element: <Company />, loader: ({ params }) => fetch(`http://localhost:5000/company/${params.id}`) },
@@ -32,8 +38,9 @@ const router = createBrowserRouter([
       { path: "/item/:id", element: <PrivateRoute><ProductDtls /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/item/${params.id}`) },
 
       { path: "/cart", element: <MyCart />, loader: () => fetch('http://localhost:5000/cart') },
-      
-      { path: "/update/:id", element: <Update />, loader: ({params})=> fetch(`http://localhost:5000/update/${params.id}`)}
+
+      { path: "/update/:id", element: <Update />, loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`) },
+
 
     ]
   },
