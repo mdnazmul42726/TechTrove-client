@@ -4,9 +4,9 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Company = () => {
-    const {user} = useContext(AuthContext);
 
     const company = useLoaderData();
+
 
 
     return (
@@ -54,9 +54,9 @@ const Company = () => {
                             <h3 className="font-semibold">Rating: <span className="font-light">{product.rating}</span></h3>
                             <h1 className="text-xl font-bold mb-3">Price: <span className="text-2xl"><sup className="font-light text-sm">$</sup>{product.price}</span></h1>
                         </div>
-                        <div className="card-actions justify-end">
-                         <Link to={`/item/${product._id}`}><button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Details</button></Link>
-                         {user && <button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Update</button>}
+                        <div className="flex gap-2 items-center justify-end">
+                            <Link to={`/item/${product._id}`}><button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Details</button></Link>
+                            <button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Update</button>
                         </div>
                     </div>
                 </div>)}

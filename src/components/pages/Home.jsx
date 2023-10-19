@@ -33,6 +33,7 @@ const Home = () => {
             {/* brand section start */}
             <div className="mt-16">
                 <h1 className="text-3xl font-bold text-center">Our Partner Companies</h1>
+                <p className="text-center">Click on the company logos to see their available products</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3 w-11/12 mx-auto mt-10">
                     {companys.slice(0, 6).map(company => <BrandCard key={company._id} company={company} />)}
