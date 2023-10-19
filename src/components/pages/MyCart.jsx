@@ -2,7 +2,10 @@ import { useLoaderData } from "react-router-dom";
 
 const MyCart = () => {
     const cartData = useLoaderData();
-    console.log(cartData);
+
+    const handleRemoveItem = (_id) => {
+        fetch(`http://localhost:5000/cart/${_id}`, {method: 'DELETE'}).then(res=> res.json()).then(data=> console.log(data))
+    }
 
     return (
         <div>
@@ -33,7 +36,7 @@ const MyCart = () => {
                                 <span className="text-center w-1/5 font-semibold text-sm">${data?.price}</span>
                             </div>
                             <div className="flex justify-center w-1/5">
-                                <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Remove</button>
+                                <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase" onClick={() => handleRemoveItem(data?._id)}>Remove</button>
                             </div>
 
                         </div>)}
