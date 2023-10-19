@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddProduct = () => {
-    const {nam} = useContext(AuthContext)
+    const { nam } = useContext(AuthContext)
     console.log(nam);
 
     const handleAddProduct = (e) => {
@@ -10,13 +11,27 @@ const AddProduct = () => {
         const form = e.target;
         const photoUrl = form.photoUrl.value;
         const productName = form.productName.value;
-        const brandName = form.brandName.value;
+        const companyName = form.brandName.value;
         const category = form.category.value;
         const price = form.price.value;
         const rating = form.rating.value;
         const description = form.description.value;
 
-        console.log(photoUrl, price, productName, brandName, category, rating, description);
+        const product = { photoUrl, price, productName, companyName, category, rating, description };
+
+        fetch('http://localhost:5000/product', {
+
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(product)
+
+        }).then(res => res.json()).then(data => {
+
+            if (data.insertedId) {
+                Swal.fire('Item Added');
+                form.reset();
+            }
+        });
     }
 
     return (
@@ -44,12 +59,12 @@ const AddProduct = () => {
                         <select id="cars" name="brandName" className="px-2 py-3 bg-white w-full text-sm border-b-2 focus:border-[#007bff] outline-none">
                             <option value="brand-name">Brand Name</option>
                             <hr />
-                            <option value="samsung">Samsung</option>
-                            <option value="apple">Apple</option>
-                            <option value="nokia">Nokia</option>
-                            <option value="google">Google</option>
-                            <option value="sony">Sony</option>
-                            <option value="intel">Intel</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Apple">Apple</option>
+                            <option value="Nokia">Nokia</option>
+                            <option value="Google">Google</option>
+                            <option value="Sony">Sony</option>
+                            <option value="Intel">Intel</option>
                         </select>
                     </div>
                     <div className="relative flex items-center">
@@ -61,6 +76,7 @@ const AddProduct = () => {
                             <option value="mobile">Mobile</option>
                             <option value="laptop">Laptop</option>
                             <option value="headphone">Headphone</option>
+                            <option value="watch">Watch</option>
                             <option value="camera">Camera</option>
                             <option value="drone">Drone</option>
                         </select>
