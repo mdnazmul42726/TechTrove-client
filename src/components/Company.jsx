@@ -1,12 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Footer from "./Footer";
-import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
-
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Company = () => {
+    const {user} = useContext(AuthContext);
 
     const company = useLoaderData();
-    console.log(company);
 
 
     return (
@@ -39,6 +39,7 @@ const Company = () => {
                     </div>
                 </div>
             </div>)}
+
             {/* product */}
             <h1 className="text-2xl text-center font-bold mt-20 mb-10">Available products</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-4 mb-36 w-11/12 mx-auto">
@@ -54,8 +55,8 @@ const Company = () => {
                             <h1 className="text-xl font-bold mb-3">Price: <span className="text-2xl"><sup className="font-light text-sm">$</sup>{product.price}</span></h1>
                         </div>
                         <div className="card-actions justify-end">
-                            <button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Details</button>
-                            <button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Update</button>
+                         <Link to={`/item/${product._id}`}><button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Details</button></Link>
+                         {user && <button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Update</button>}
                         </div>
                     </div>
                 </div>)}

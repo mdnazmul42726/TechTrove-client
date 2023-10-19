@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const BrandCard = ({ company }) => {
-    const {companyName, companyLogo , _id} = company || {};
+    const {companyName, companyLogo} = company || {};
 
     return (
         <Link to={`/company/${companyName}`}><div className="">
