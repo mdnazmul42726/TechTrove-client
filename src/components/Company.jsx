@@ -56,7 +56,7 @@ const Company = () => {
                         </div>
                         <div className="flex gap-2 items-center justify-end">
                             <Link to={`/item/${product._id}`}><button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Details</button></Link>
-                            <button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Update</button>
+                           <Link to={`/update/${product._id}`}><button className="badge badge-outline font-bold p-2.5 hover:text-red-600">Update</button></Link>
                         </div>
                     </div>
                 </div>)}

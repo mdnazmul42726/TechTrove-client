@@ -12,6 +12,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Company from "./components/Company";
 import ProductDtls from "./components/pages/ProductDtls";
 import MyCart from "./components/pages/MyCart";
+import Update from "./components/Update";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
 
       { path: "/item/:id", element: <PrivateRoute><ProductDtls /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/item/${params.id}`) },
 
-      { path: "/cart", element: <MyCart />, loader: () => fetch('http://localhost:5000/cart') }
+      { path: "/cart", element: <MyCart />, loader: () => fetch('http://localhost:5000/cart') },
+      
+      { path: "/update/:id", element: <Update />, loader: ({params})=> fetch(`http://localhost:5000/update/${params.id}`)}
 
     ]
   },
