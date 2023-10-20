@@ -1,13 +1,14 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Footer from "./Footer";
-import { useContext } from "react";
-import { AuthContext } from "../providers/AuthProvider";
+import { useEffect } from "react";
 
 const Company = () => {
 
     const company = useLoaderData();
 
-
+    useEffect(()=>{
+        document.title = 'Brand'
+    },[])
 
     return (
         <div className="" data-aos="zoom-out">

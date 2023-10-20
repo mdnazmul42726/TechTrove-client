@@ -58,7 +58,7 @@ const Root = () => {
     return (
         <div>
             {/* Navbar Start */}
-            <div className="shadow-md fixed z-50 w-full">
+            <div className="shadow-md fixed z-40 w-full">
                 <div className="navbar bg-base-100">
                     <div className="flex-1">
                         <img className="w-[7%] hidden md:flex" src={logo} alt="" />
@@ -112,7 +112,7 @@ const Root = () => {
                 </div>
             </div>
             {/* Navbar end */}
-            <div className="overflow-hidden"><Outlet /></div>
+            <div className=""><Outlet /></div>
         </div>
     );
 };

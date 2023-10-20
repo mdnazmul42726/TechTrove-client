@@ -1,9 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer";
 import { FaEyeSlash, FaEye, FaGithub } from 'react-icons/fa';
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -19,7 +20,16 @@ const Login = () => {
         signInWithEmailPass(email, password).then(() => {
             navigate('/');
 
-        }).catch(err => console.log(err))
+        }).catch(err => {
+
+            console.log(err.code);
+            if (err.code == 'auth/invalid-login-credentials') {
+                // toast('wrong email or password')
+                toast.error("wrong email or password");
+            } else if (err.code == 'auth/too-many-requests') {
+                toast.error('Too many requests!')
+            }
+        })
     };
 
     const socialLogIn = (media) => {
@@ -27,7 +37,12 @@ const Login = () => {
             navigate('/')
 
         }).catch(err => console.log(err));
-    }
+    };
+
+    useEffect(() => {
+        document.title = 'Login'
+
+    }, []);
 
     return (
         <div className="" data-aos="zoom-out">
@@ -102,8 +117,11 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
-            <div><Toaster /></div>
+            {/* <Footer /> */}
+            <Toaster
+                position="bottom-right"
+                reverseOrder={false}
+            />
         </div>
     );
 };

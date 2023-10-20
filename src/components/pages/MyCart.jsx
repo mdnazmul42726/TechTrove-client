@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from 'sweetalert2'
 import noItem from '../../assets/no-itemcart.gif'
@@ -21,7 +21,7 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/cart/${_id}`, { method: 'DELETE' }).then(res => res.json()).then(data => {
+                fetch(`https://assaingment-server.vercel.app/cart/${_id}`, { method: 'DELETE' }).then(res => res.json()).then(data => {
 
                     if (data.deletedCount) {
 
@@ -37,6 +37,10 @@ const MyCart = () => {
             }
         })
     };
+
+    useEffect(()=>{
+        document.title = 'Cart'
+    },[])
 
     if (cartData == 0) {
         return (

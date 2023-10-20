@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
@@ -28,7 +28,7 @@ const AddProduct = () => {
             return
         }
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://assaingment-server.vercel.app/product', {
 
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -42,6 +42,10 @@ const AddProduct = () => {
             }
         });
     }
+
+    useEffect(()=>{
+        document.title = 'Add Product'
+    },[])
 
     return (
         <div className="pt-36 text-center" data-aos="zoom-out">

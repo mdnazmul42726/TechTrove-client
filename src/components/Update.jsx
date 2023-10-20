@@ -19,7 +19,7 @@ const Update = () => {
 
         const updatedProduct = { photoUrl, price, productName, companyName, category, rating, description };
 
-        fetch(`http://localhost:5000/update/${previousData._id}`, {
+        fetch(`https://assaingment-server.vercel.app/update/${previousData._id}`, {
 
             method: 'PUT',
             headers: { 'content-type': 'application/json' },

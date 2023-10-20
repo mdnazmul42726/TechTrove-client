@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import Footer from './Footer';
@@ -22,19 +22,19 @@ const Register = () => {
 
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-        if (password !== conPassword) {
-            toast.error("Password did not match");
+        if (!passwordRegex.test(password)) {
+            toast.error('Password must have minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character');
             return;
 
-        } else if (!passwordRegex.test(password)) {
-            toast.error('Password must have minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character');
-            return
+        } else if (password !== conPassword) {
+            toast.error("Password did not match");
+            return;
         }
 
         signUpWithEmailPass(email, password).then(() => {
             updateUserProfile(name, photoUrl).then(() => {
                 navigate('/');
-                
+
             }).catch(err => console.log(err))
 
         }).catch(err => {
@@ -45,6 +45,10 @@ const Register = () => {
 
         });
     }
+
+    useEffect(() => {
+        document.title = 'Register'
+    }, [])
 
     return (
         <div className="" data-aos="zoom-out">
@@ -107,8 +111,10 @@ const Register = () => {
                     </form>
                 </div>
             </div>
-            <Footer />
-            <div><Toaster /></div>
+            <Toaster
+                position="bottom-right"
+                reverseOrder={false}
+            />
         </div>
     );
 };

@@ -1,7 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Footer from "../Footer";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const ProductDtls = () => {
     const productDtls = useLoaderData();
@@ -9,19 +10,36 @@ const ProductDtls = () => {
     const cartData = { img: productDtls.photoUrl, name: productDtls.productName, brand: productDtls.companyName, price: productDtls.price };
 
     const handleAddToCart = () => {
-        fetch('http://localhost:5000/cart', {
+        fetch('https://assaingment-server.vercel.app/cart', {
 
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(cartData)
 
         }).then(res => res.json()).then(data => {
+            console.log(data);
 
             if (data.insertedId) {
-                toast("The item has been added to the card");
+
+                toast.success("The item has been added to the card");
+
+                // toast('The item has been added to the card', {
+                //     position: "bottom-left",
+                //     autoClose: 5000,
+                //     hideProgressBar: false,
+                //     closeOnClick: true,
+                //     pauseOnHover: true,
+                //     draggable: true,
+                //     progress: undefined,
+                //     theme: "light",
+                // });
             }
         })
     }
+
+    useEffect(() => {
+        document.title = 'Details'
+    }, [])
 
     return (
         <div className="pt-28" data-aos="fade-left">
@@ -80,8 +98,11 @@ const ProductDtls = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
-            <ToastContainer />
+            {/* <Footer /> */}
+            <Toaster
+                position="bottom-left"
+                reverseOrder={false}
+            />
         </div>
     );
 };

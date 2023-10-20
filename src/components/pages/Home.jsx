@@ -2,11 +2,16 @@ import { useLoaderData } from "react-router-dom";
 import bannerImg from "../../assets/bannerImg.png"
 import BrandCard from "../BrandCard";
 import Footer from "../Footer";
+import { useEffect } from "react";
 
 
 const Home = () => {
     const companys = useLoaderData()
     console.log(companys);
+
+    useEffect(()=>{
+        document.title = 'Home'
+    },[])
 
     return (
         <div className=" w-full bg-base-100 overflow-hidden">

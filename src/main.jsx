@@ -22,25 +22,25 @@ const router = createBrowserRouter([
     path: "/", element: <Root />, errorElement: <ErrorPage/>, 
 
     children: [
-      { path: "/", element: <Home />, loader: () => fetch('http://localhost:5000/brands')},
+      { path: "/", element: <Home />, loader: () => fetch('https://assaingment-server.vercel.app/brands')},
 
       { path: "/login", element: <Login /> },
 
       { path: "/register", element: <Register /> },
-
+      
       { path: "/about", element: <About /> },
 
       { path: "/contact", element: <Contact /> },
 
       { path: "/add-product", element: <PrivateRoute><AddProduct /></PrivateRoute> },
 
-      { path: "/company/:id", element: <Company />, loader: ({ params }) => fetch(`http://localhost:5000/company/${params.id}`) },
+      { path: "/company/:id", element: <Company />, loader: ({ params }) => fetch(`https://assaingment-server.vercel.app/company/${params.id}`) },
 
-      { path: "/item/:id", element: <PrivateRoute><ProductDtls /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/item/${params.id}`) },
+      { path: "/item/:id", element: <PrivateRoute><ProductDtls /></PrivateRoute>, loader: ({ params }) => fetch(`https://assaingment-server.vercel.app/item/${params.id}`) },
 
-      { path: "/cart", element: <MyCart />, loader: () => fetch('http://localhost:5000/cart') },
+      { path: "/cart", element: <MyCart />, loader: () => fetch('https://assaingment-server.vercel.app/cart') },
 
-      { path: "/update/:id", element: <PrivateRoute><Update /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`) },
+      { path: "/update/:id", element: <PrivateRoute><Update /></PrivateRoute>, loader: ({ params }) => fetch(`https://assaingment-server.vercel.app/update/${params.id}`) },
 
 
     ]

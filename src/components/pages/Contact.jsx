@@ -1,7 +1,13 @@
-import React from 'react';
+
+import { useEffect } from 'react';
 import Footer from '../Footer';
 
 const Contact = () => {
+
+    useEffect(()=>{
+        document.title = 'Contact'
+    },[])
+
     return (
         <div data-aos="zoom-out">
             <div className="w-11/12 pt-20 mx-auto" data-aos="zoom-out">
