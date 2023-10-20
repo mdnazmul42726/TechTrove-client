@@ -15,13 +15,14 @@ import MyCart from "./components/pages/MyCart";
 import Update from "./components/Update";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
+import ErrorPage from "./components/pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "/", element: <Root />,
+    path: "/", element: <Root />, errorElement: <ErrorPage/>, 
 
     children: [
-      { path: "/", element: <Home />, loader: () => fetch('http://localhost:5000/brands') },
+      { path: "/", element: <Home />, loader: () => fetch('http://localhost:5000/brands')},
 
       { path: "/login", element: <Login /> },
 
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
 
       { path: "/cart", element: <MyCart />, loader: () => fetch('http://localhost:5000/cart') },
 
-      { path: "/update/:id", element: <Update />, loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`) },
+      { path: "/update/:id", element: <PrivateRoute><Update /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`) },
 
 
     ]

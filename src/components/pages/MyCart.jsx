@@ -56,7 +56,7 @@ const MyCart = () => {
             <div>
                 <div className="container mx-auto pt-20">
                     <div className="md:flex shadow-md my-10">
-                        <div className="w-full md:w-3/4 bg-white px-10 py-10">
+                        <div className="w-full md:w-3/4 px-10 py-10">
                             <div className="md:flex justify-between border-b pb-8">
                                 <h1 className="font-semibold text-2xl">Shopping Cart</h1>
                                 <h2 className="font-semibold text-2xl">{cartData.length} Items</h2>
@@ -67,7 +67,7 @@ const MyCart = () => {
                                 <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 ">Action</h3>
                             </div>
 
-                            {cartData.map(data => <div key={data._id} className="flex items-center justify-between hover:bg-gray-100 -mx-8 px-6 py-5">
+                            {cartData.map(data => <div key={data._id} className="flex border-b items-center justify-between -mx-8 px-6 py-5">
                                 <div className="flex w-2/5">
                                     <div className="w-20">
                                         <img className="h-24" src={data?.img} alt="" />

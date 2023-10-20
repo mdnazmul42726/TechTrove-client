@@ -40,26 +40,26 @@ const ProductDtls = () => {
                 </div>
                 <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
                     <div className="border-b border-gray-200 pb-6">
-                        <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 mt-2">{productDtls?.productName}</h1>
-                        <h1 className="lg:text-xl font-semibold lg:leading-6 leading-7 text-gray-800 mt-2">Price: {productDtls?.price} USD</h1>
+                        <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 mt-2">{productDtls?.productName}</h1>
+                        <h1 className="lg:text-xl font-semibold lg:leading-6 leading-7 mt-2">Price: {productDtls?.price} USD</h1>
 
                     </div>
                     <div className="py-4 border-b border-gray-200 flex items-center justify-between">
-                        <p className="text-base leading-4 text-gray-800">Brand:</p>
+                        <p className="text-base leading-4">Brand:</p>
                         <div className="flex items-center justify-center">
-                            <p className="text-sm leading-none text-gray-600">{productDtls?.companyName}</p>
+                            <p className="text-sm leading-none">{productDtls?.companyName}</p>
                         </div>
                     </div>
                     <div className="py-4 border-b border-gray-200 flex items-center justify-between">
-                        <p className="text-base leading-4 text-gray-800">Category:</p>
+                        <p className="text-base leading-4">Category:</p>
                         <div className="flex items-center justify-center">
-                            <p className="text-sm leading-none text-gray-600 mr-3">{productDtls?.category}</p>
+                            <p className="text-sm leading-none mr-3">{productDtls?.category}</p>
                         </div>
                     </div>
                     <div className="py-4 border-b border-gray-200 flex items-center justify-between">
-                        <p className="text-base leading-4 text-gray-800">Rating:</p>
+                        <p className="text-base leading-4">Rating:</p>
                         <div className="flex items-center justify-center">
-                            <p className="text-sm leading-none text-gray-600 mr-3">{productDtls?.rating}</p>
+                            <p className="text-sm leading-none mr-3">{productDtls?.rating}</p>
                             <div className="rating">
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
@@ -70,8 +70,8 @@ const ProductDtls = () => {
                         </div>
                     </div>
                     <div>
-                        <p className=" text-gray-600 mt-3">{productDtls.description}.</p>
-                        <p className="text-base leading-4 mt-3 text-gray-600"><span className="font-bold">Product ID: </span><span>{productDtls._id}</span></p>
+                        <p className=" mt-3">{productDtls.description}.</p>
+                        <p className="text-base leading-4 mt-3"><span className="font-bold">Product ID: </span><span>{productDtls._id}</span></p>
                         <div className="mt-7">
                             <button className="btn bg-sky-500 w-full hover:bg-sky-600 text-white font-bold" onClick={handleAddToCart}>Add to Cart</button>
                         </div>

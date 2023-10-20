@@ -32,7 +32,7 @@ const Login = () => {
     return (
         <div className="">
             <div className="pt-20 flex justify-center">
-                <div className="bg-white my-4 rounded-xl sm:px-6 px-4 py-8 max-w-md w-full h-max shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] max-lg:mx-auto">
+                <div className=" my-4 rounded-xl sm:px-6 px-4 py-8 max-w-md w-full h-max shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] max-lg:mx-auto">
                     <div className="">
                         <div className="mb-10">
                             <h3 className="text-3xl font-extrabold ">Login</h3>

@@ -3,20 +3,21 @@ import bannerImg from "../../assets/bannerImg.png"
 import BrandCard from "../BrandCard";
 import Footer from "../Footer";
 
+
 const Home = () => {
     const companys = useLoaderData()
     console.log(companys);
 
     return (
-        <div className="h-[1000px] w-full">
-            <div className="bg-[#efefeD] min-h-[300px]">
+        <div className="h-[1000px] w-full bg-base-100">
+            <div className="bg-base-100 text-base min-h-[300px]">
                 {/* banner start */}
-                <div className="w-11/12 mx-auto">
+                <div className="w-11/12 mx-auto bg-base-100">
                     <div className="pt-32">
                         <div className="flex-row-reverse md:flex md:flex-row justify-between items-center">
                             <div className="">
                                 <h3 className=" bg-[#F6AA19] uppercase text-sm rounded-full pl-3 w-40 mb-8">weekend discount</h3>
-                                <h2 className="text-3xl md:text-5xl font-light mb-2">Enhance Your</h2>
+                                <h2 className="text-3xl md:text-5xl font-light mb-2 ">Enhance Your</h2>
                                 <h1 className="text-4xl md:text-6xl font-bold">Entertainment</h1>
                                 <h4 className=" text-xl">Last call for up to <span className="text-2xl font-bold text-[#ff0000]">%20</span> off!</h4>
                                 <button className="bg-[#0070dc] text-[#fff] hover:text-[#000] transition-all border-2 hover:bg-transparent py-1 px-5 mt-8 rounded-full">Shop Now</button>
@@ -44,15 +45,15 @@ const Home = () => {
 
             {/* upcoming offer section start */}
 
-            <div className="relative overflow-hidden bg-white mt-44 mx-5">
+            <div className="relative overflow-hidden bg-base-100 mt-44 mx-5">
                 {/* <h1 className="text-3xl text-center">  features product</h1> */}
                 <div className="mb-10">
                 </div>
                 <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
                     <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
                         <div className="sm:max-w-lg">
-                            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Check out our hot products</h1>
-                            <p className="mt-4 text-xl text-gray-500">Buy products from the most reputed companies at the lowest prices!</p>
+                            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">Check out our hot products</h1>
+                            <p className="mt-4 text-xl ">Buy products from the most reputed companies at the lowest prices!</p>
                         </div>
                         <div>
                             <div className="mt-10">
@@ -101,7 +102,7 @@ const Home = () => {
 
             {/*  */}
 
-            <div className="max-w-6xl mx-auto font-[sans-serif] text-[#333] mt-40">
+            <div className="max-w-6xl mx-auto font-[sans-serif] bg-base-100 mt-40">
                 <h2 className="sm:text-4xl text-2xl font-extrabold text-center mb-16">Discover Our Exclusive Features</h2>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-12">
                     <div className="p-4 text-center">
@@ -110,7 +111,7 @@ const Home = () => {
                             <path d="M16 9a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7Zm0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5Z" data-original="#000000" />
                         </svg>
                         <h3 className="text-xl font-semibold mb-2">Reputed companies</h3>
-                        <p className="text-gray-500 text-sm">We always sell products of world renowned companies.</p>
+                        <p className="text-sm">We always sell products of world renowned companies.</p>
                     </div>
                     <div className="p-4 text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 mb-4 inline-block" viewBox="0 0 682.667 682.667">
@@ -125,14 +126,14 @@ const Home = () => {
                             </g>
                         </svg>
                         <h3 className="text-xl font-semibold mb-2">Authentic</h3>
-                        <p className="text-gray-500 text-sm">We verify the authentication of each product before selling it and hand it over to the customer</p>
+                        <p className=" text-sm">We verify the authentication of each product before selling it and hand it over to the customer</p>
                     </div>
                     <div className="p-4 text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 mb-4 inline-block" viewBox="0 0 512.001 512.001">
                             <path d="M271.029 0c-33.091 0-61 27.909-61 61s27.909 61 61 61 60-27.909 60-61-26.909-61-60-61zm66.592 122c-16.485 18.279-40.096 30-66.592 30-26.496 0-51.107-11.721-67.592-30-14.392 15.959-23.408 36.866-23.408 60v15c0 8.291 6.709 15 15 15h151c8.291 0 15-6.709 15-15v-15c0-23.134-9.016-44.041-23.408-60zM144.946 460.404 68.505 307.149c-7.381-14.799-25.345-20.834-40.162-13.493l-19.979 9.897c-7.439 3.689-10.466 12.73-6.753 20.156l90 180c3.701 7.423 12.704 10.377 20.083 6.738l19.722-9.771c14.875-7.368 20.938-25.417 13.53-40.272zM499.73 247.7c-12.301-9-29.401-7.2-39.6 3.9l-82 100.8c-5.7 6-16.5 9.6-22.2 9.6h-69.901c-8.401 0-15-6.599-15-15s6.599-15 15-15h60c16.5 0 30-13.5 30-30s-13.5-30-30-30h-78.6c-7.476 0-11.204-4.741-17.1-9.901-23.209-20.885-57.949-30.947-93.119-22.795-19.528 4.526-32.697 12.415-46.053 22.993l-.445-.361-21.696 19.094L174.28 452h171.749c28.2 0 55.201-13.5 72.001-36l87.999-126c9.9-13.201 7.2-32.399-6.299-42.3z" data-original="#000000" />
                         </svg>
                         <h3 className="text-xl font-semibold mb-2">Support</h3>
-                        <p className="text-gray-500 text-sm">Tailor our product to suit your needs 24/7 customer support for all your inquiries.</p>
+                        <p className=" text-sm">Tailor our product to suit your needs 24/7 customer support for all your inquiries.</p>
                     </div>
                     <div className="p-4 text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 mb-4 inline-block" viewBox="0 0 24 24">
