@@ -35,7 +35,7 @@ const Update = () => {
     }
 
     return (
-        <div className="pt-36 text-center">
+        <div className="pt-36 text-center" data-aos="zoom-out">
             <h1 className="text-3xl font-bold mb-20">Update Product</h1>
             <form className="font-[sans-serif] max-w-4xl mx-auto" onSubmit={handleUpdate}>
                 <div className="grid sm:grid-cols-2 gap-6">

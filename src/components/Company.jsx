@@ -10,7 +10,7 @@ const Company = () => {
 
 
     return (
-        <div className="">
+        <div className="" data-aos="zoom-out">
             {company.slice(0, 1).map(com => <div key={com._id} className="pt-40">
                 <h1 className="text-3xl text-center font-bold mb-10">{com.companyName}</h1>
                 <div className="w-[96%] mx-auto">

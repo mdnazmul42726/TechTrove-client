@@ -53,7 +53,7 @@ const MyCart = () => {
 
     } else {
         return (
-            <div>
+            <div data-aos="fade-down">
                 <div className="container mx-auto pt-20">
                     <div className="md:flex shadow-md my-10">
                         <div className="w-full md:w-3/4 px-10 py-10">

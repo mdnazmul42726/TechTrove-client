@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Footer from '../Footer';
 
 const About = () => {
 
@@ -7,7 +8,7 @@ const About = () => {
     }, []);
 
     return (
-        <div className='pt-20'>
+        <div className='pt-20' data-aos="zoom-out">
             <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
                 <div className="flex flex-col lg:flex-row justify-between gap-8">
                     <div className="w-full lg:w-5/12 flex flex-col justify-center">
@@ -56,6 +57,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

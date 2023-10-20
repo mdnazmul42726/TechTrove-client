@@ -24,7 +24,7 @@ const ProductDtls = () => {
     }
 
     return (
-        <div className="pt-28">
+        <div className="pt-28" data-aos="fade-left">
             <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
                 <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
                     <img className="w-full" alt="img of a product" src={productDtls?.photoUrl} />

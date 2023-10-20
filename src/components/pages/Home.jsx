@@ -9,20 +9,20 @@ const Home = () => {
     console.log(companys);
 
     return (
-        <div className="h-[1000px] w-full bg-base-100">
+        <div className=" w-full bg-base-100 overflow-hidden">
             <div className="bg-base-100 text-base min-h-[300px]">
                 {/* banner start */}
                 <div className="w-11/12 mx-auto bg-base-100">
                     <div className="pt-32">
                         <div className="flex-row-reverse md:flex md:flex-row justify-between items-center">
-                            <div className="">
+                            <div className="" data-aos="fade-right">
                                 <h3 className=" bg-[#F6AA19] uppercase text-sm rounded-full pl-3 w-40 mb-8">weekend discount</h3>
                                 <h2 className="text-3xl md:text-5xl font-light mb-2 ">Enhance Your</h2>
                                 <h1 className="text-4xl md:text-6xl font-bold">Entertainment</h1>
                                 <h4 className=" text-xl">Last call for up to <span className="text-2xl font-bold text-[#ff0000]">%20</span> off!</h4>
                                 <button className="bg-[#0070dc] text-[#fff] hover:text-[#000] transition-all border-2 hover:bg-transparent py-1 px-5 mt-8 rounded-full">Shop Now</button>
                             </div>
-                            <div className="">
+                            <div className="" data-aos="fade-left">
                                 <img src={bannerImg} alt="" />
                             </div>
                         </div>
@@ -32,7 +32,7 @@ const Home = () => {
             {/* banner end */}
 
             {/* brand section start */}
-            <div className="mt-16">
+            <div className="mt-16"  data-aos="zoom-out">
                 <h1 className="text-3xl font-bold text-center">Our Partner Companies</h1>
                 <p className="text-center">Click on the company logos to see their available products</p>
 
@@ -45,7 +45,7 @@ const Home = () => {
 
             {/* upcoming offer section start */}
 
-            <div className="relative overflow-hidden bg-base-100 mt-44 mx-5">
+            <div className="relative overflow-hidden bg-base-100 mt-44 mx-5" data-aos="zoom-in"   >
                 {/* <h1 className="text-3xl text-center">  features product</h1> */}
                 <div className="mb-10">
                 </div>
@@ -102,7 +102,7 @@ const Home = () => {
 
             {/*  */}
 
-            <div className="max-w-6xl mx-auto font-[sans-serif] bg-base-100 mt-40">
+            <div className="max-w-6xl mx-auto font-[sans-serif] bg-base-100 mt-40" data-aos="zoom-out">
                 <h2 className="sm:text-4xl text-2xl font-extrabold text-center mb-16">Discover Our Exclusive Features</h2>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-12">
                     <div className="p-4 text-center">

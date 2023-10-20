@@ -62,7 +62,7 @@ const Root = () => {
                 <div className="navbar bg-base-100">
                     <div className="flex-1">
                         <img className="w-[7%] hidden md:flex" src={logo} alt="" />
-                        <a className="text-xl md:text-2xl font-bold">Tech<span className="text-[#F6AA19]">Trove</span></a>
+                        <a className=" md:text-2xl font-bold">Tech<span className="text-[#F6AA19]">Trove</span></a>
                     </div>
                     <div className="flex-none gap-2">
                         <div className="space-x-3 flex">
@@ -95,7 +95,8 @@ const Root = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                         </svg>
                         </button> </NavLink>}
-                        <label className="swap swap-rotate">
+
+                        <label title="Theme" className="swap swap-rotate">
 
                             {/* this hidden checkbox controls the state */}
                             <input type="checkbox" onChange={handleThemeToggle} />
@@ -111,7 +112,7 @@ const Root = () => {
                 </div>
             </div>
             {/* Navbar end */}
-            <div className=""><Outlet /></div>
+            <div className="overflow-hidden"><Outlet /></div>
         </div>
     );
 };
